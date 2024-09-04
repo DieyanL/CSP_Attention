@@ -172,7 +172,7 @@ class VRPDataset(Dataset):
         if filename is not None:
             assert os.path.splitext(filename)[1] == '.pkl'
 
-            with open(filename, 'rb') as f:
+            with open(filename, 'rb') as f:  # 从文件中读入实例
                 data = pickle.load(f)
             self.data = [make_instance(args) for args in data[offset:offset+num_samples]]
 
